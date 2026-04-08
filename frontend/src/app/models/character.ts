@@ -1,24 +1,37 @@
 export interface Character {
   id: string;
   name: string;
-  house: string;
-  image: string;
+
+  alternate_names: string[];
+
   species: string;
-  wizard: boolean;
-  ancestry: string;
-  actor: string;
   gender: string;
+  house: string;
+
   dateOfBirth: string;
   yearOfBirth: number;
+
+  wizard: boolean;
+  ancestry: string;
+
   eyeColour: string;
   hairColour: string;
-  patronus: string;
-  hogwartsStudent: boolean;
-  hogwartsStaff: boolean;
-  alive: boolean;
+
   wand: {
     wood: string;
     core: string;
-    length: number | null;
+    length: number;
   };
+
+  patronus: string;
+
+  hogwartsStudent: boolean;
+  hogwartsStaff: boolean;
+
+  actor: string;
+  alternate_actors: string[];
+
+  alive: boolean;
+
+  image: string;
 }

@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { Home } from './components/home/home';
 import { Spells } from './components/spells/spells';
 import { Movies } from './components/movies/movies';
+import { Books } from './components/books/books';
 import { CharacterlistComponent } from './components/characterlist/characterlist';
 import { CharacterdetailsComponent } from './components/characterdetails/characterdetails';
 
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: 'details/:id', component: CharacterdetailsComponent },
   { path: 'spells', component: Spells },
   { path: 'movies', component: Movies },
+  { path: 'books', component: Books }
 ];

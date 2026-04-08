@@ -1,58 +1,67 @@
-<section class="details-page" *ngIf="selectedCharacter as character; else loadingBlock">
-  <div class="background-overlay"></div>
+<section class="character-details-page" *ngIf="selectedCharacter as character; else loadingBlock">
+  <div class="character-details-overlay"></div>
 
-  <button class="back-button" (click)="goBackToList()">← Back</button>
+  <div class="character-details-content">
+    <a routerLink="/characters" class="back-link">← Back to Characters</a>
 
-  <div class="details-content">
-    <div class="details-text">
-      <p class="house-label">{{ character.house || 'Unknown House' }}</p>
-      <h1>{{ character.name }}</h1>
+    <p class="character-kicker">Wizarding Profile</p>
+    <h1>{{ character.name }}</h1>
 
-      <div class="character-description">
-        <p>
-          {{ character.name }}
-          <span *ngIf="character.alternate_names?.length">
-            , also known as <strong>{{ character.alternate_names.join(', ') }}</strong>,
-          </span>
-          is a {{ character.species || 'unknown' }} {{ character.gender || 'character' }}
-          from {{ character.house || 'an unknown house' }}.
-        </p>
+    <p class="character-subtitle" *ngIf="character.alternate_names?.length">
+      Also known as {{ character.alternate_names.join(', ') }}
+    </p>
 
-        <p>
-          Born on {{ character.dateOfBirth || 'an unknown date' }},
-          {{ character.name }} is
-          {{ character.wizard ? 'a wizard' : 'not a wizard' }}
-          of {{ character.ancestry || 'unknown ancestry' }} ancestry,
-          portrayed by {{ character.actor || 'an unknown actor' }}.
-        </p>
-
-        <p>
-          They have {{ character.eyeColour || 'unknown' }} eyes and
-          {{ character.hairColour || 'unknown' }} hair,
-          and {{ character.hogwartsStudent ? 'are a Hogwarts student' : 'are not a Hogwarts student' }}.
-        </p>
-
-        <p>
-          Their wand is made of {{ character.wand?.wood || 'unknown wood' }},
-          with a core of {{ character.wand?.core || 'unknown material' }},
-          and a length of {{ character.wand?.length ?? 'unknown' }}.
-        </p>
+    <div class="character-row">
+      <div class="character-poster">
+        <img [src]="character.image" [alt]="character.name" />
       </div>
 
-      <div class="details-actions">
-        <button class="gold-button" (click)="goBackToList()">Other Characters</button>
-      </div>
-    </div>
+      <div class="character-info">
+        <div class="character-highlight-box">
+          <p><strong>Name:</strong> {{ character.name }}</p>
+          <p><strong>Species:</strong> {{ character.species || 'Unknown' }}</p>
+          <p><strong>House:</strong> {{ character.house || 'Unknown' }}</p>
+          <p><strong>Wizard:</strong> {{ character.wizard ? 'Yes' : 'No' }}</p>
+          <p><strong>Ancestry:</strong> {{ character.ancestry || 'Unknown' }}</p>
+          <p><strong>Actor:</strong> {{ character.actor || 'Unknown' }}</p>
 
-    <div class="details-character">
-      <img [src]="character.image" [alt]="character.name" />
+          <h3>Wand</h3>
+          <p><strong>Wood:</strong> {{ character.wand?.wood || 'Unknown' }}</p>
+          <p><strong>Core:</strong> {{ character.wand?.core || 'Unknown' }}</p>
+          <p><strong>Length:</strong> {{ character.wand?.length ?? 'Unknown' }}</p>
+        </div>
+
+        <div class="character-description">
+          <p>
+            {{ character.name }}
+            <span *ngIf="character.alternate_names?.length">
+              , also known as {{ character.alternate_names.join(', ') }},
+            </span>
+            is a {{ character.species || 'unknown' }}
+            {{ character.wizard ? 'wizard' : 'non-wizard' }}
+            from {{ character.house || 'an unknown house' }}.
+          </p>
+
+          <p>
+            Portrayed by {{ character.actor || 'an unknown actor' }},
+            {{ character.name }} is of {{ character.ancestry || 'unknown' }} ancestry
+            and is known for being part of the magical world of Hogwarts.
+          </p>
+
+          <p *ngIf="character.wand">
+            Their wand is made of {{ character.wand.wood || 'unknown wood' }},
+            contains a core of {{ character.wand.core || 'unknown material' }},
+            and has a length of {{ character.wand.length ?? 'unknown' }}.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <ng-template #loadingBlock>
-  <section class="details-page loading-page">
-    <div class="background-overlay"></div>
-    <p>Loading...</p>
+  <section class="character-details-page loading-page">
+    <div class="character-details-overlay"></div>
+    <p class="loading-text">Loading character details...</p>
   </section>
 </ng-template>

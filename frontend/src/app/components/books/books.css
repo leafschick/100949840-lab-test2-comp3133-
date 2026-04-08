@@ -1,22 +1,22 @@
-.movies-page {
+.books-page {
   min-height: 100vh;
   position: relative;
   padding: 32px;
   color: #ffffff;
-  background-image: url('https://images.unsplash.com/photo-1502136969935-8d111b3c5c13?q=80&w=1600&auto=format&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.movies-overlay {
+.books-overlay {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(to right, rgba(8, 10, 18, 0.94) 0%, rgba(8, 10, 18, 0.78) 45%, rgba(8, 10, 18, 0.42) 100%);
 }
 
-.movies-content {
+.books-content {
   position: relative;
   z-index: 2;
   max-width: 1200px;
@@ -31,7 +31,7 @@
   font-weight: 600;
 }
 
-.movies-kicker {
+.books-kicker {
   color: #f1c84b;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -39,26 +39,26 @@
   margin-bottom: 10px;
 }
 
-.movies-content h1 {
+.books-content h1 {
   font-size: 3.5rem;
   color: #f1c84b;
   margin-bottom: 10px;
 }
 
-.movies-intro {
+.books-intro {
   max-width: 720px;
   margin-bottom: 30px;
   color: #eaeaea;
   line-height: 1.6;
 }
 
-.movies-list {
+.books-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.movie-row {
+.book-row {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 24px;
@@ -70,54 +70,37 @@
   backdrop-filter: blur(4px);
 }
 
-.movie-poster img {
+.book-cover img {
   width: 100%;
   border-radius: 12px;
   display: block;
 }
 
-.movie-info h2 {
+.book-info h2 {
   margin: 0 0 8px;
   color: #f1c84b;
   font-size: 1.7rem;
 }
 
-.movie-meta {
+.book-meta {
   font-size: 0.95rem;
   margin-bottom: 12px;
   color: #cccccc;
 }
 
-.movie-summary {
+.book-summary {
   line-height: 1.7;
   margin-bottom: 16px;
   color: #f0f0f0;
 }
 
-.movie-extra p {
-  margin: 0 0 8px;
-  line-height: 1.5;
+.book-dedication {
+  line-height: 1.6;
   color: #e7e7e7;
 }
 
-.movie-extra strong {
+.book-dedication strong {
   color: #ffffff;
-}
-
-.movie-links {
-  display: flex;
-  gap: 18px;
-  margin-top: 14px;
-}
-
-.movie-links a {
-  color: #f1c84b;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.movie-links a:hover {
-  text-decoration: underline;
 }
 
 .loading-text {
@@ -125,15 +108,15 @@
 }
 
 @media (max-width: 768px) {
-  .movie-row {
+  .book-row {
     grid-template-columns: 1fr;
   }
 
-  .movie-poster {
+  .book-cover {
     max-width: 220px;
   }
 
-  .movies-content h1 {
+  .books-content h1 {
     font-size: 2.5rem;
   }
 }

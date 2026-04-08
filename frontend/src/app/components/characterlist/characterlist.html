@@ -1,26 +1,35 @@
-<section class="character-page">
-  <app-characterfilter
-    (houseChanged)="filterCharactersByHouse($event)">
-  </app-characterfilter>
+<section class="characters-page">
+  <div class="characters-overlay"></div>
 
-  <h1>Harry Potter Characters</h1>
-  <p>Browse through the character collection and open a profile to find out more details.</p>
+  <div class="characters-content">
+    <a routerLink="/" class="back-link">← Back Home</a>
 
-  <div *ngIf="displayedCharacters.length > 0; else loadingBlock" class="character-grid">
-    <div
-      class="character-card"
-      *ngFor="let oneCharacter of displayedCharacters"
-      (click)="openCharacterDetails(oneCharacter.id)"
-    >
-      <img [src]="oneCharacter.image" [alt]="oneCharacter.name" />
-      <div class="card-content">
-        <h3>{{ oneCharacter.name }}</h3>
-        <p>{{ oneCharacter.house || 'No House' }}</p>
+    <p class="characters-kicker">Wizarding Archive</p>
+    <h1>Choose a house and  discover its characters</h1>
+    <p class="characters-intro"> Explore the witches and wizards of Hogwarts by selecting a house and uncovering the characters who belong to it. </p>
+
+    <div class="characters-toolbar">
+      <app-characterfilter (houseChanged)="filterCharactersByHouse($event)"></app-characterfilter>
+    </div>
+
+    <div *ngIf="displayedCharacters.length > 0; else loadingBlock" class="characters-grid">
+      <div
+        class="character-tile"
+        *ngFor="let oneCharacter of displayedCharacters"
+        (click)="openCharacterDetails(oneCharacter.id)"
+      >
+        <div class="character-image-wrap">
+          <img [src]="oneCharacter.image" [alt]="oneCharacter.name" />
+        </div>
+
+        <div class="character-info">
+          <p class="character-house">{{ oneCharacter.house || 'Unknown House' }}</p>
+          <h3>{{ oneCharacter.name }}</h3>
+        </div>
       </div>
     </div>
-  </div>
 
-  <ng-template #loadingBlock>
-    <p>{{ loadingMessage }}</p>
-  </ng-template>
+    <ng-template #loadingBlock>
+    </ng-template>
+  </div>
 </section>

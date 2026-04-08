@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Character } from '../models/character';
 import { Spell } from '../models/spell';
 import { Movie } from '../models/movies';
+import { Book } from '../models/books';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class CharacterService {
   }
 
   fetchCharacterById(characterId: string): Observable<Character> {
-    return this.http.get<Character>(`${this.apiUrl}/character/${characterId}`);
+    return this.http.get<Character>('https://potterhead-api.vercel.app/api/characters');
   }
 
   fetchAllSpells(): Observable<Spell[]> {
@@ -31,5 +32,9 @@ export class CharacterService {
   fetchAllMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>('https://potterhead-api.vercel.app/api/movies');
   }
+
+  fetchAllBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>('https://potterhead-api.vercel.app/api/books');
+}
 
 }

@@ -1,0 +1,41 @@
+<section class="books-page">
+  <div class="books-overlay"></div>
+
+  <div class="books-content">
+    <a routerLink="/" class="back-link">← Back Home</a>
+
+    <p class="books-kicker">Wizarding Library</p>
+    <h1>Harry Potter Books</h1>
+    <p class="books-intro">
+      Return to the original stories that introduced the wizarding world and began Harry Potter’s magical journey.
+    </p>
+
+    <div *ngIf="allBooks.length > 0; else loadingBlock" class="books-list">
+      <div class="book-row" *ngFor="let book of allBooks">
+        <div class="book-cover">
+          <img [src]="book.cover" [alt]="book.title" />
+        </div>
+
+        <div class="book-info">
+          <h2>{{ book.title }}</h2>
+
+          <p class="book-meta">
+            {{ book.release_date }} • {{ book.pages }} pages
+          </p>
+
+          <p class="book-summary">
+            {{ book.summary }}
+          </p>
+
+          <p class="book-dedication">
+            <strong>Dedication:</strong> {{ book.dedication }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #loadingBlock>
+      <p class="loading-text">{{ loadingText }}</p>
+    </ng-template>
+  </div>
+</section>

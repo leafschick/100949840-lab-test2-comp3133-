@@ -1,8 +1,7 @@
-.details-page {
+.character-details-page {
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
-  padding: 28px 36px;
+  padding: 32px;
   color: #ffffff;
   background-image: url('https://cf.preview.redd.it/i-replayed-each-house-and-had-plenty-of-time-to-perfect-the-v0-578pix1joiuc1.jpeg?width=1080&crop=smart&auto=webp&s=ae24eb69ae72f01b5feff18ddf302f5413746100');
   background-size: cover;
@@ -10,144 +9,101 @@
   background-repeat: no-repeat;
 }
 
-.background-overlay {
+.character-details-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(3, 6, 15, 0.92) 0%, rgba(3, 6, 15, 0.76) 38%, rgba(3, 6, 15, 0.42) 68%, rgba(3, 6, 15, 0.22) 100%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08));
-  z-index: 1;
+    linear-gradient(to right, rgba(8, 10, 18, 0.94) 0%, rgba(8, 10, 18, 0.78) 45%, rgba(8, 10, 18, 0.42) 100%);
 }
 
-.back-button {
-  position: relative;
-  z-index: 3;
-  background: transparent;
-  color: #f1c84b;
-  border: 1px solid rgba(241, 200, 75, 0.5);
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 24px;
-  transition: 0.25s ease;
-}
-
-.back-button:hover {
-  background: rgba(241, 200, 75, 0.1);
-}
-
-.details-content {
+.character-details-content {
   position: relative;
   z-index: 2;
-  min-height: calc(100vh - 110px);
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  align-items: center;
-  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.details-text {
-  max-width: 700px;
-  padding-right: 20px;
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #f1c84b;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.house-label {
+.character-kicker {
   color: #f1c84b;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
-.details-text h1 {
-  font-size: 4rem;
-  line-height: 0.95;
-  margin: 0 0 24px;
+.character-details-content h1 {
+  font-size: 3.5rem;
   color: #f1c84b;
-  font-weight: 800;
+  margin: 0 0 8px;
 }
 
-.character-description {
-  max-width: 720px;
-  color: #f5f5f5;
-  font-size: 1.08rem;
-  line-height: 1.75;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+.character-subtitle {
+  max-width: 760px;
+  margin-bottom: 28px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.character-row {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: start;
+  background: rgba(10, 14, 26, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 22px;
+  backdrop-filter: blur(4px);
+}
+
+.character-poster img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.character-highlight-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.character-highlight-box p {
+  margin: 0 0 10px;
+  line-height: 1.55;
+  color: #f0f0f0;
+}
+
+.character-highlight-box strong {
+  color: #ffffff;
+}
+
+.character-highlight-box h3 {
+  margin: 16px 0 12px;
+  color: #f1c84b;
+  font-size: 1.3rem;
 }
 
 .character-description p {
-  margin: 0 0 18px;
-}
-
-.character-description strong {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.wand-section {
-  margin-top: 28px;
-}
-
-.wand-section h3 {
   margin: 0 0 14px;
-  font-size: 1.8rem;
-  color: #f1c84b;
-}
-
-.wand-section p {
-  margin: 0 0 12px;
-  font-size: 1.05rem;
-  line-height: 1.45;
-  color: #f5f5f5;
-}
-
-.wand-section span {
-  display: inline-block;
-  min-width: 150px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.details-actions {
-  margin-top: 28px;
-}
-
-.gold-button {
-  background: #e4b11b;
-  color: #111111;
-  border: none;
-  border-radius: 999px;
-  padding: 14px 24px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.gold-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.95;
-}
-
-.details-character {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  min-height: 700px;
-  padding-top: 10px;
-}
-
-.details-character img {
-  max-height: 620px;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  object-position: top right;
-  border-radius: 4px;
-  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.4);
+  line-height: 1.75;
+  color: #e7e7e7;
 }
 
 .loading-page {
@@ -156,64 +112,22 @@
   justify-content: center;
 }
 
-.loading-page p {
+.loading-text {
   position: relative;
   z-index: 2;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-@media (max-width: 1100px) {
-  .details-content {
+@media (max-width: 768px) {
+  .character-row {
     grid-template-columns: 1fr;
-    align-items: start;
   }
 
-  .details-text {
-    max-width: none;
-    padding-right: 0;
+  .character-poster {
+    max-width: 240px;
   }
 
-  .details-text h1 {
-    font-size: 3rem;
-  }
-
-  .details-character {
-    min-height: 420px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .details-character img {
-    max-height: 420px;
-  }
-}
-
-@media (max-width: 640px) {
-  .details-page {
-    padding: 20px;
-  }
-
-  .details-text h1 {
-    font-size: 2.3rem;
-  }
-
-  .character-description {
-    font-size: 0.98rem;
-  }
-
-  .wand-section p {
-    font-size: 0.98rem;
-  }
-
-  .wand-section span {
-    min-width: 118px;
-  }
-
-  .details-character {
-    min-height: 320px;
-  }
-
-  .details-character img {
-    max-height: 320px;
+  .character-details-content h1 {
+    font-size: 2.5rem;
   }
 }

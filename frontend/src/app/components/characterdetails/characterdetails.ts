@@ -2,6 +2,7 @@ import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CharacterService } from '../../services/character';
+import { Character } from '../../models/character';
 
 @Component({
   selector: 'app-characterdetails',
@@ -16,21 +17,16 @@ export class CharacterdetailsComponent implements OnInit {
   private characterService = inject(CharacterService);
   private cdr = inject(ChangeDetectorRef);
 
-  selectedCharacter: any = null;
+  selectedCharacter: Character | null = null;
 
   ngOnInit(): void {
     const pickedCharacterId = this.route.snapshot.paramMap.get('id');
-    console.log('Route ID:', pickedCharacterId);
 
     this.characterService.fetchAllCharacters().subscribe({
-      next: (response) => {
-        console.log('API Response:', response);
-
+      next: (response: Character[]) => {
         const foundCharacter = response.find(
-          (oneCharacter: any) => oneCharacter.id === pickedCharacterId
+          (oneCharacter: Character) => oneCharacter.id === pickedCharacterId
         );
-
-        console.log('Found Character:', foundCharacter);
 
         this.selectedCharacter = foundCharacter || null;
         this.cdr.detectChanges();
@@ -42,6 +38,6 @@ export class CharacterdetailsComponent implements OnInit {
   }
 
   goBackToList(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/characters']);
   }
 }
