@@ -1,1 +1,20 @@
-<p>characterlist works!</p>
+<section class="character-page">
+  <h1>Harry Potter Characters</h1>
+  <p>Browse through the character collection and open a profile to find out more details.</p>
+
+  @if (getVisibleCharacters().length > 0) {
+    <div class="character-grid">
+      @for (oneCharacter of getVisibleCharacters(); track oneCharacter.id) {
+        <div class="character-card" (click)="openCharacterDetails(oneCharacter.id)">
+          <img [src]="oneCharacter.image" [alt]="oneCharacter.name" />
+          <div class="card-content">
+            <h3>{{ oneCharacter.name }}</h3>
+            <p>{{ oneCharacter.house || 'No House' }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <p>{{ loadingMessage }}</p>
+  }
+</section>
