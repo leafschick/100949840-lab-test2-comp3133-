@@ -1,1 +1,19 @@
-<p>characterdetails works!</p>
+<button (click)="goBackToList()">← Back to Characters</button>
+
+<h1>Character Details Page</h1>
+
+<div *ngIf="selectedCharacter as character">
+  <h2>{{ character.name }}</h2>
+  <p><strong>House:</strong> {{ character.house }}</p>
+  <p><strong>Species:</strong> {{ character.species }}</p>
+  <p><strong>Wizard:</strong> {{ character.wizard ? 'Yes' : 'No' }}</p>
+  <p><strong>Ancestry:</strong> {{ character.ancestry }}</p>
+  <p><strong>Actor:</strong> {{ character.actor }}</p>
+
+  <img [src]="character.image" [alt]="character.name" width="250" />
+
+  <h3>Wand</h3>
+  <p><strong>Wood:</strong> {{ character.wand.wood }}</p>
+  <p><strong>Core:</strong> {{ character.wand.core }}</p>
+  <p><strong>Length:</strong> {{ character.wand.length }}</p>
+</div>
