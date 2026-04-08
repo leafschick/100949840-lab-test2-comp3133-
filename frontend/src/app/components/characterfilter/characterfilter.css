@@ -19,3 +19,11 @@ select {
   font-size: 0.95rem;
 }
 
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-field {
+  width: 220px;
+}
+

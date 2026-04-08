@@ -1,5 +1,5 @@
 <section class="spells-page">
-  <div class="spells-overlay"></div>
+    <div class="spells-overlay"></div>
 
   <div class="spells-content">
     <a routerLink="/" class="back-link">← Back Home</a>
@@ -18,7 +18,11 @@
     </div>
 
     <ng-template #loadingBlock>
-      <p class="loading-text">{{ loadingText }}</p>
+        <div class="loading-block">
+            <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+            <p class="loading-text">{{ loadingText }}</p>
+        </div>
     </ng-template>
-  </div>
+  
+    </div>
 </section>

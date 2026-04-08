@@ -1,6 +1,10 @@
 <section class="home-page">
   <div class="home-overlay"></div>
 
+  <mat-toolbar class="home-toolbar">
+    Harry Potter Hogwarts Legacy
+  </mat-toolbar>
+
   <div class="home-content">
     <p class="home-kicker">The Wizarding World Awaits</p>
     <h1>Harry Potter Hogwarts Legacy</h1>
@@ -17,29 +21,29 @@
     </p>
 
     <div class="home-actions">
-      <a routerLink="/characters" class="feature-card">
+      <mat-card class="feature-card" routerLink="/characters">
         <span class="feature-label">Explore</span>
         <h3>Characters</h3>
         <p>Browse witches, wizards, houses, and detailed profiles.</p>
-      </a>
+      </mat-card>
 
-      <a routerLink="/spells" class="feature-card">
+      <mat-card class="feature-card" routerLink="/spells">
         <span class="feature-label">Discover</span>
         <h3>Spells</h3>
         <p>Learn magical spells and their meaning in the wizarding world.</p>
-      </a>
+      </mat-card>
 
-      <a routerLink="/movies" class="feature-card">
+      <mat-card class="feature-card" routerLink="/movies">
         <span class="feature-label">Watch</span>
         <h3>Movies</h3>
         <p>Revisit the films that brought the magic to life on screen.</p>
-      </a>
+      </mat-card>
 
-      <a routerLink="/books" class="feature-card">
+      <mat-card class="feature-card" routerLink="/books">
         <span class="feature-label">Read</span>
         <h3>Books</h3>
         <p>Step back into the stories that began the Harry Potter journey.</p>
-      </a>
+      </mat-card>
     </div>
   </div>
 </section>
