@@ -1,55 +1,219 @@
 .details-page {
   min-height: 100vh;
-  background-color: #0b0b0f;
-  color: white;
-  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  padding: 28px 36px;
+  color: #ffffff;
+  background-image: url('https://cf.preview.redd.it/i-replayed-each-house-and-had-plenty-of-time-to-perfect-the-v0-578pix1joiuc1.jpeg?width=1080&crop=smart&auto=webp&s=ae24eb69ae72f01b5feff18ddf302f5413746100');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(3, 6, 15, 0.92) 0%, rgba(3, 6, 15, 0.76) 38%, rgba(3, 6, 15, 0.42) 68%, rgba(3, 6, 15, 0.22) 100%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08));
+  z-index: 1;
 }
 
 .back-button {
-  background-color: #f5c84c;
-  color: #111;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 10px;
-  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  background: transparent;
+  color: #f1c84b;
+  border: 1px solid rgba(241, 200, 75, 0.5);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
   font-weight: 600;
+  cursor: pointer;
   margin-bottom: 24px;
+  transition: 0.25s ease;
 }
 
-.details-card {
+.back-button:hover {
+  background: rgba(241, 200, 75, 0.1);
+}
+
+.details-content {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 110px);
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  background-color: #17171c;
-  border-radius: 16px;
-  padding: 24px;
-  align-items: start;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 24px;
 }
 
-.image-section img {
-  width: 100%;
-  border-radius: 14px;
-  object-fit: cover;
+.details-text {
+  max-width: 700px;
+  padding-right: 20px;
 }
 
-.info-section h1 {
-  margin-top: 0;
-  color: #f5c84c;
+.house-label {
+  color: #f1c84b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.info-section p {
-  margin: 10px 0;
-  color: #e5e5e5;
+.details-text h1 {
+  font-size: 4rem;
+  line-height: 0.95;
+  margin: 0 0 24px;
+  color: #f1c84b;
+  font-weight: 800;
 }
 
-.wand-box {
-  margin-top: 24px;
-  padding: 16px;
-  background-color: #22222a;
-  border-radius: 12px;
+.character-description {
+  max-width: 720px;
+  color: #f5f5f5;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
-.wand-box h3 {
-  margin-top: 0;
-  color: #f5c84c;
+.character-description p {
+  margin: 0 0 18px;
+}
+
+.character-description strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.wand-section {
+  margin-top: 28px;
+}
+
+.wand-section h3 {
+  margin: 0 0 14px;
+  font-size: 1.8rem;
+  color: #f1c84b;
+}
+
+.wand-section p {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #f5f5f5;
+}
+
+.wand-section span {
+  display: inline-block;
+  min-width: 150px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.details-actions {
+  margin-top: 28px;
+}
+
+.gold-button {
+  background: #e4b11b;
+  color: #111111;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.gold-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.details-character {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 700px;
+  padding-top: 10px;
+}
+
+.details-character img {
+  max-height: 620px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: top right;
+  border-radius: 4px;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.4);
+}
+
+.loading-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-page p {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1100px) {
+  .details-content {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .details-text {
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .details-text h1 {
+    font-size: 3rem;
+  }
+
+  .details-character {
+    min-height: 420px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .details-character img {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .details-page {
+    padding: 20px;
+  }
+
+  .details-text h1 {
+    font-size: 2.3rem;
+  }
+
+  .character-description {
+    font-size: 0.98rem;
+  }
+
+  .wand-section p {
+    font-size: 0.98rem;
+  }
+
+  .wand-section span {
+    min-width: 118px;
+  }
+
+  .details-character {
+    min-height: 320px;
+  }
+
+  .details-character img {
+    max-height: 320px;
+  }
 }

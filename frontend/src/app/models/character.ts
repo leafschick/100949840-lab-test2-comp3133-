@@ -7,6 +7,15 @@ export interface Character {
   wizard: boolean;
   ancestry: string;
   actor: string;
+  gender: string;
+  dateOfBirth: string;
+  yearOfBirth: number;
+  eyeColour: string;
+  hairColour: string;
+  patronus: string;
+  hogwartsStudent: boolean;
+  hogwartsStaff: boolean;
+  alive: boolean;
   wand: {
     wood: string;
     core: string;
