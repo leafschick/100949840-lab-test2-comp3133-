@@ -2,6 +2,8 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Character } from '../models/character';
+import { Spell } from '../models/spell';
+import { Movie } from '../models/movies';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +23,13 @@ export class CharacterService {
   fetchCharacterById(characterId: string): Observable<Character> {
     return this.http.get<Character>(`${this.apiUrl}/character/${characterId}`);
   }
+
+  fetchAllSpells(): Observable<Spell[]> {
+   return this.http.get<Spell[]>('https://potterhead-api.vercel.app/api/spells');
+  }
+
+  fetchAllMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>('https://potterhead-api.vercel.app/api/movies');
+  }
+
 }

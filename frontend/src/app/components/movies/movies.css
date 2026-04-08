@@ -1,0 +1,109 @@
+.movies-page {
+  min-height: 100vh;
+  position: relative;
+  padding: 32px;
+  color: #ffffff;
+  background-image: url('https://w3.pngaura.com/assets/images/posts/original/671e869f5b0e4_nazim121_harry_potter_live_wallpaper_8k_high_quality_--ar_74_--_2f7af4ab-fa1b-4ca2-975c-24ced4c92635.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.movies-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(6, 10, 22, 0.95) 0%, rgba(6, 10, 22, 0.75) 45%, rgba(6, 10, 22, 0.4) 100%);
+}
+
+.movies-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #f1c84b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.movies-kicker {
+  color: #f1c84b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.movies-content h1 {
+  font-size: 3.5rem;
+  color: #f1c84b;
+  margin-bottom: 10px;
+}
+
+.movies-intro {
+  max-width: 700px;
+  margin-bottom: 30px;
+  color: #eaeaea;
+}
+
+.movies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.movie-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.movie-poster img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.movie-info h2 {
+  margin: 0 0 8px;
+  color: #f1c84b;
+}
+
+.movie-meta {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #cccccc;
+}
+
+.movie-summary {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.trailer-link {
+  color: #f1c84b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.trailer-link:hover {
+  text-decoration: underline;
+}
+
+.loading-text {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .movie-row {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-poster {
+    max-width: 220px;
+  }
+}

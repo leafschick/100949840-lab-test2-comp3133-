@@ -1,0 +1,50 @@
+<section class="movies-page">
+  <div class="movies-overlay"></div>
+
+  <div class="movies-content">
+    <a routerLink="/" class="back-link">← Back Home</a>
+
+    <p class="movies-kicker">Wizarding Cinema</p>
+    <h1>Harry Potter Movies</h1>
+    <p class="movies-intro">
+      Explore the films that brought the wizarding world to life on screen.
+    </p>
+
+    <div *ngIf="allMovies.length > 0; else loadingBlock" class="movies-list">
+      <div class="movie-row" *ngFor="let movie of allMovies">
+        <div class="movie-poster">
+          <img [src]="movie.poster" [alt]="movie.title" />
+        </div>
+
+        <div class="movie-info">
+          <h2>{{ movie.title }}</h2>
+
+          <p class="movie-meta">
+            {{ movie.release_date }} • {{ movie.running_time }} • {{ movie.rating }}
+          </p>
+
+          <p class="movie-summary">
+            {{ movie.summary }}
+          </p>
+
+          <div class="movie-extra">
+            <p><strong>Directors:</strong> {{ movie.directors.join(', ') }}</p>
+            <p><strong>Screenwriters:</strong> {{ movie.screenwriters.join(', ') }}</p>
+            <p><strong>Producers:</strong> {{ movie.producers.join(', ') }}</p>
+            <p><strong>Music:</strong> {{ movie.music_composers.join(', ') }}</p>
+            <p><strong>Budget:</strong> {{ movie.budget }}</p>
+            <p><strong>Box Office:</strong> {{ movie.box_office }}</p>
+          </div>
+
+          <div class="movie-links">
+            <a [href]="movie.trailer" target="_blank">▶ Trailer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #loadingBlock>
+      <p class="loading-text">{{ loadingText }}</p>
+    </ng-template>
+  </div>
+</section>

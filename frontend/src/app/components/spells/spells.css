@@ -1,0 +1,132 @@
+.spells-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  color: #ffffff;
+  background-image: url('https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.spells-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(5, 8, 18, 0.94) 0%, rgba(5, 8, 18, 0.78) 42%, rgba(5, 8, 18, 0.48) 100%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.12));
+  z-index: 1;
+}
+
+.spells-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #f1c84b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.spells-kicker {
+  color: #f1c84b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.spells-content h1 {
+  font-size: 3.6rem;
+  line-height: 1;
+  margin: 0 0 16px;
+  color: #f1c84b;
+  font-weight: 800;
+}
+
+.spells-intro {
+  max-width: 760px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #ececec;
+  margin-bottom: 30px;
+}
+
+.spells-list {
+  background: rgba(11, 17, 34, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.spell-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.25s ease;
+}
+
+.spell-row:last-child {
+  border-bottom: none;
+}
+
+.spell-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.spell-name {
+  color: #f1c84b;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.spell-description {
+  color: #e7e7e7;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.loading-text {
+  font-size: 1.05rem;
+  color: #f5f5f5;
+}
+
+@media (max-width: 900px) {
+  .spell-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .spell-name {
+    font-size: 1.08rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .spells-page {
+    padding: 20px;
+  }
+
+  .spells-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .spells-intro {
+    font-size: 0.98rem;
+  }
+
+  .spell-row {
+    padding: 18px 16px;
+  }
+}

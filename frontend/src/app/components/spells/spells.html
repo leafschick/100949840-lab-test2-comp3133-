@@ -1,0 +1,24 @@
+<section class="spells-page">
+  <div class="spells-overlay"></div>
+
+  <div class="spells-content">
+    <a routerLink="/" class="back-link">← Back Home</a>
+
+    <p class="spells-kicker">Wizarding Magic</p>
+    <h1>Spells of the Wizarding World</h1>
+    <p class="spells-intro">
+      Discover magical spells and learn how they are used throughout the Harry Potter universe.
+    </p>
+
+    <div *ngIf="allSpells.length > 0; else loadingBlock" class="spells-list">
+      <div class="spell-row" *ngFor="let oneSpell of allSpells">
+        <div class="spell-name">{{ oneSpell.name }}</div>
+        <div class="spell-description">{{ oneSpell.description }}</div>
+      </div>
+    </div>
+
+    <ng-template #loadingBlock>
+      <p class="loading-text">{{ loadingText }}</p>
+    </ng-template>
+  </div>
+</section>
