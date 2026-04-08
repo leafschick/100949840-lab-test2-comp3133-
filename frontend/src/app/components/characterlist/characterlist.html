@@ -1,20 +1,26 @@
 <section class="character-page">
+  <app-characterfilter
+    (houseChanged)="filterCharactersByHouse($event)">
+  </app-characterfilter>
+
   <h1>Harry Potter Characters</h1>
   <p>Browse through the character collection and open a profile to find out more details.</p>
 
-  @if (getVisibleCharacters().length > 0) {
-    <div class="character-grid">
-      @for (oneCharacter of getVisibleCharacters(); track oneCharacter.id) {
-        <div class="character-card" (click)="openCharacterDetails(oneCharacter.id)">
-          <img [src]="oneCharacter.image" [alt]="oneCharacter.name" />
-          <div class="card-content">
-            <h3>{{ oneCharacter.name }}</h3>
-            <p>{{ oneCharacter.house || 'No House' }}</p>
-          </div>
-        </div>
-      }
+  <div *ngIf="displayedCharacters.length > 0; else loadingBlock" class="character-grid">
+    <div
+      class="character-card"
+      *ngFor="let oneCharacter of displayedCharacters"
+      (click)="openCharacterDetails(oneCharacter.id)"
+    >
+      <img [src]="oneCharacter.image" [alt]="oneCharacter.name" />
+      <div class="card-content">
+        <h3>{{ oneCharacter.name }}</h3>
+        <p>{{ oneCharacter.house || 'No House' }}</p>
+      </div>
     </div>
-  } @else {
+  </div>
+
+  <ng-template #loadingBlock>
     <p>{{ loadingMessage }}</p>
-  }
+  </ng-template>
 </section>

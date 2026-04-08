@@ -1,1 +1,7 @@
-<p>characterfilter works!</p>
+<label for="houseSelect">Filter by House:</label>
+
+<select id="houseSelect" [(ngModel)]="selectedHouse" (change)="onHouseSelect()">
+  <option *ngFor="let house of houseOptions" [value]="house">
+    {{ house || 'All Houses' }}
+  </option>
+</select>

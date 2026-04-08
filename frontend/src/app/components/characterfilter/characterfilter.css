@@ -1,0 +1,9 @@
+label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+select {
+  padding: 8px;
+  border-radius: 6px;
+}
